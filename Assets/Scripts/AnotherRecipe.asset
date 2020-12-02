@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bce851151af140843acc91f74e72b8ae, type: 3}
-  m_Name: TestRecipe
+  m_Name: AnotherRecipe
   m_EditorClassIdentifier: 
-  dishName: Recipe1
-  prepMethod: 1
+  dishName: Sausage Roll
+  prepMethod: 2
   ingredients:
-  - Ingredient 1
-  - Ingredient 2
-  dishCost: 2
+  - Pastry
+  - Meat Filling
+  dishCost: 5

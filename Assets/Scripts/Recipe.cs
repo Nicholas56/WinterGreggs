@@ -11,6 +11,8 @@ public class Recipe : ScriptableObject
     public int prepMethod;
     [Tooltip("The list of ingredients in this recipe")]
     public List<string> ingredients = new List<string>();
+    [Tooltip("The amount to add to the score when delivered")]
+    public int dishCost;
 
     public List<string> ReturnIngredients()
     {

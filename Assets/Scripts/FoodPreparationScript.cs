@@ -41,26 +41,35 @@ public class FoodPreparationScript : MonoBehaviour
     {
         for (int i = 0; i < recipes.Count; i++)
         {
+            //This checks each recipe to see if this prep method applies. Runs this code for each recipe.
             if (recipes[i].prepMethod == prepMethod)
             {
-                for (int k = 0; k < prepIngredients.Count; k++)
+                //Makes a list of each of the ingredients on the table
+                List<string> currentIngreds = CheckIngredients();
+                for (int k = 0; k < currentIngreds.Count; k++)
                 {
-                    if (prepIngredients[k].activeSelf) {
-                        if (recipes[i].ingredients.Contains(CheckIngredients()[k]))
+                    //If the button on the table is not active, this cycle does nothing
+                    if (prepIngredients[k].activeSelf)
+                    {
+                        //This checks to see if the recipe includes one of the ingredients on the table, compares them properly later.
+                        if (recipes[i].ingredients.Contains(currentIngreds[k]))
                         {
                             List<string> recipe = new List<string>();
                             recipe = recipes[i].ReturnIngredients();
-                            List<string> ingreds = CheckIngredients();
+                            List<string> ingreds = currentIngreds;
+                            //The comparison of ingredients on the table and the recipe being looked at happens here.
                             if (CompareLists(ingreds, recipe))
                             {
                                 for (int j = 0; j < prepIngredients.Count; j++)
                                 {
+                                    //This checks that the number of buttons match the remaining current ingredients, setting the rest to inactive
                                     if (ingreds.Count > j)
-                                    { prepIngredients[j].GetComponentInChildren<TMP_Text>().text = ingreds[j]; }
+                                    { ChangeButtonText(prepIngredients[j], ingreds[j]); }
                                     else { prepIngredients[j].SetActive(false); }
                                 }
+                                //Then sets the next inactive button to display the cooked dish.
                                 prepIngredients[ingreds.Count + 1].SetActive(true);
-                                prepIngredients[ingreds.Count + 1].GetComponentInChildren<TMP_Text>().text = recipes[i].dishName;
+                                ChangeButtonText(prepIngredients[ingreds.Count+1], recipes[i].dishName);
                                 return;
                             }
                         }

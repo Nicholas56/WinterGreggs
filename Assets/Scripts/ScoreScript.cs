@@ -14,9 +14,32 @@ public class ScoreScript : MonoBehaviour
         scoreTxt.text = "Score: " + scoreNum;
     }
 
-    public void IncreaseScore()
+    public void IncreaseScore(string buttonText)
     {
-        scoreNum++;
-        scoreTxt.text = "Score: " + scoreNum;
+        int scoreAdd = FindCost(buttonText);
+
+        scoreNum +=scoreAdd;
+        scoreTxt.text = "Score: " + scoreNum;     
+    }
+
+    int FindCost(string textToRead)
+    {
+        string[] textParts = textToRead.Split(' ');
+        string dishName = null;
+        for (int i = 1; i < textParts.Length; i++)
+        {
+            dishName += textParts[i];
+        }
+
+        List<Recipe> recipeToCheck = FindObjectOfType<FoodPreparationScript>().recipes;
+        for (int i = 0; i < recipeToCheck.Count; i++)
+        {
+            if (recipeToCheck[i].dishName == dishName)
+            {
+                return recipeToCheck[i].dishCost;
+            }
+        }
+
+        return 0;
     }
 }
