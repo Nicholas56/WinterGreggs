@@ -29,7 +29,10 @@ public class ScoreScript : MonoBehaviour
         for (int i = 1; i < textParts.Length; i++)
         {
             dishName += textParts[i];
+            //For all but the last part, adds back in the space
+            if (i < textParts.Length-1) { dishName += ' '; }
         }
+        Debug.Log(dishName);
 
         List<Recipe> recipeToCheck = FindObjectOfType<FoodPreparationScript>().recipes;
         for (int i = 0; i < recipeToCheck.Count; i++)

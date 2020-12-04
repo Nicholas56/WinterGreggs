@@ -37,6 +37,8 @@ public class CookDishScript : MonoBehaviour
         {
             Burnt();
         }
+        if (!canClick)
+            ovenButton.color = Color.Lerp(Color.white, new Color(1f,0.5f,0.5f,1), ((Time.time - timer) / cookTime));
     }
 
     /// <summary>
