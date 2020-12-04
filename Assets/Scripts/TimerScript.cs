@@ -22,6 +22,8 @@ public class TimerScript : MonoBehaviour
         timeCount += Time.deltaTime;
         timerTxt.text = "" + timeCount.ToString("N0") + "/" + fullTime.ToString("N0") + "s";
         timeCount = Mathf.Min(timeCount, fullTime);
+        //Changes the color to red as time runs out
+        timerTxt.color = Color.Lerp(Color.black, Color.red, (timeCount / fullTime));
 
         if (timeCount >= fullTime&&!gameEnd) { endPanel.SetActive(true); gameEnd = true; }
     }

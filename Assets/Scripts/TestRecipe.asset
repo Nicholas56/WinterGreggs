@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce851151af140843acc91f74e72b8ae, type: 3}
   m_Name: TestRecipe
   m_EditorClassIdentifier: 
-  dishName: Recipe1
+  dishName: Recipe 1
   prepMethod: 1
   ingredients:
   - Ingredient 1
