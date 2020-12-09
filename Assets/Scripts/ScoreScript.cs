@@ -19,7 +19,7 @@ public class ScoreScript : MonoBehaviour
         int scoreAdd = FindCost(buttonText);
 
         scoreNum +=scoreAdd;
-        scoreTxt.text = "Score: " + scoreNum;     
+        scoreTxt.text = "Score: £" + scoreNum;     
     }
 
     int FindCost(string textToRead)

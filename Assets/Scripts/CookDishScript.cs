@@ -13,11 +13,13 @@ public class CookDishScript : MonoBehaviour
     bool burnt;
 
     ScoreScript score;
+    SoundManager sound;
 
     private void Awake()
     {
         ovenButton = GetComponent<Image>();
         score = FindObjectOfType<ScoreScript>();
+        sound = FindObjectOfType<SoundManager>();
     }
     private void OnEnable()
     {
@@ -48,6 +50,7 @@ public class CookDishScript : MonoBehaviour
     {
         ovenButton.color = Color.red;
         canClick = true;
+        sound.PlaySoundEffect(2);
     }
 
     void Burnt()
@@ -66,6 +69,7 @@ public class CookDishScript : MonoBehaviour
             if (!burnt)
             {
                 score.IncreaseScore(gameObject.GetComponentInChildren<TMPro.TMP_Text>().text);
+                sound.PlaySoundEffect(3);
             }
             //Whatever happens when a food is cooked. Score?
             gameObject.SetActive(false);

@@ -10,11 +10,13 @@ public class FoodPreparationScript : MonoBehaviour
 
     List<GameObject> prepIngredients;
     List<GameObject> ovens;
+    SoundManager sound;
 
     private void Awake()
     {
         Transform prepTable = GameObject.Find("PrepIngredients").transform;
         Transform ovenHolder = GameObject.Find("OvenPanel").transform;
+        sound = FindObjectOfType<SoundManager>();
 
         prepIngredients = new List<GameObject>();
         ovens = new List<GameObject>();
@@ -46,6 +48,7 @@ public class FoodPreparationScript : MonoBehaviour
             {
                 //Makes a list of each of the ingredients on the table
                 List<string> currentIngreds = CheckIngredients();
+                if (currentIngreds == null) { return; }
                 for (int k = 0; k < currentIngreds.Count; k++)
                 {
                     //If the button on the table is not active, this cycle does nothing
@@ -70,6 +73,7 @@ public class FoodPreparationScript : MonoBehaviour
                                 //Then sets the next inactive button to display the cooked dish.
                                 prepIngredients[ingreds.Count + 1].SetActive(true);
                                 ChangeButtonText(prepIngredients[ingreds.Count+1], recipes[i].dishName);
+                                sound.PlaySoundEffect(1);
                                 return;
                             }
                         }
@@ -92,6 +96,7 @@ public class FoodPreparationScript : MonoBehaviour
                 PutInOven(ingredient);
             }
         }
+        sound.PlaySoundEffect(0);
         ingredient.SetActive(false);
     }
 
@@ -107,6 +112,8 @@ public class FoodPreparationScript : MonoBehaviour
             {
                 prepIngredients[i].SetActive(true);
                 ChangeButtonText(prepIngredients[i], ingredient.GetComponentInChildren<TMP_Text>().text);
+                ChangeButtonImage(prepIngredients[i], ingredient.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite);
+                sound.PlaySoundEffect(0);
 
                 return;
             }
@@ -159,6 +166,16 @@ public class FoodPreparationScript : MonoBehaviour
     void ChangeButtonText(GameObject button,string newText)
     {
         button.GetComponentInChildren<TMP_Text>().text = newText;
+    }
+
+    /// <summary>
+    /// Changes the image on the button to the image of the ingredient.
+    /// </summary>
+    /// <param name="button"></param>
+    /// <param name="newImage"></param>
+    void ChangeButtonImage(GameObject button, Sprite newImage)
+    {
+        button.GetComponentInChildren<UnityEngine.UI.Image>().sprite = newImage;
     }
 
     /// <summary>

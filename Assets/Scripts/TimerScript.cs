@@ -10,11 +10,13 @@ public class TimerScript : MonoBehaviour
     public GameObject endPanel;
     float timeCount;
     bool gameEnd = false;
+    SoundManager sound;
 
     private void Awake()
     {
         timerTxt = GetComponent<TMP_Text>();
         timerTxt.text = "" + timeCount.ToString("N0") + "/" + fullTime.ToString("N0") + "s";
+        sound = FindObjectOfType<SoundManager>();
     }
 
     private void LateUpdate()
@@ -25,6 +27,10 @@ public class TimerScript : MonoBehaviour
         //Changes the color to red as time runs out
         timerTxt.color = Color.Lerp(Color.black, Color.red, (timeCount / fullTime));
 
-        if (timeCount >= fullTime&&!gameEnd) { endPanel.SetActive(true); gameEnd = true; }
+        if (timeCount >= fullTime&&!gameEnd)
+        {
+            endPanel.SetActive(true); gameEnd = true;
+            sound.PlaySoundEffect(4);
+        }
     }
 }
