@@ -17,7 +17,6 @@ public class SoundManager : MonoBehaviour
         }
         music = GetComponent<AudioSource>();
 
-        Debug.Log(PlayerPrefs.GetFloat("MusicValue"));
         if (PlayerPrefs.HasKey("MusicValue"))
         {
             SetMusicVolume(PlayerPrefs.GetFloat("MusicValue"));
@@ -47,7 +46,6 @@ public class SoundManager : MonoBehaviour
     public void SetMusicVolume(float newValue)
     {
         music.volume = newValue;
-        Debug.Log(newValue);
     }
 
     public void ChangeSFXVolume(GameObject sfxSlider)
