@@ -50,6 +50,11 @@ public class ButtonScriptMap : MonoBehaviour
         SceneManager.LoadScene("MapScene v1.1");
     }
 
+    public void goToDiscount()
+    {
+        SceneManager.LoadScene("DiscountScene");
+    }
+
     public void OpenHelp()
     {
         if (helpOpen == false)
