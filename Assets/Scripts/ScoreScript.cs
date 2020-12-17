@@ -19,7 +19,6 @@ public class ScoreScript : MonoBehaviour
         scoreTxt.text = "Score: " + scoreNum;
 
         storeNum = SceneManager.GetActiveScene().buildIndex; //Get current store number using scene BuildIndex
-        Debug.Log(PlayerPrefs.GetInt("StoreHighScore" + storeNum, scoreNum)); 
     }
 
     public void IncreaseScore(string buttonText)
@@ -29,7 +28,6 @@ public class ScoreScript : MonoBehaviour
 
         scoreNum +=scoreAdd;
         scoreTxt.text = "Score: £" + scoreNum;
-        print("Score: " + scoreNum);
 
         if(scoreNum > currentHighScore) //Check if current score is higher than the HighScore, 
         {
