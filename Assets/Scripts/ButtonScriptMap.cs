@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScriptMap : MonoBehaviour
 {
+    bool helpOpen = false;
+
+    public GameObject helpWindow;
+
+    public GameObject helpText;
+
+    public GameObject shopButtons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,5 +43,23 @@ public class ButtonScriptMap : MonoBehaviour
     public void goToStore4()
     {
         SceneManager.LoadScene("StoreScene 3"); 
+    }
+
+    public void OpenHelp()
+    {
+        if (helpOpen == false)
+        {
+            helpOpen = true;
+            helpWindow.SetActive(true);
+            helpText.SetActive(true);
+            shopButtons.SetActive(false);
+        }
+        else
+        {
+            helpWindow.SetActive(false);
+            helpText.SetActive(false);
+            shopButtons.SetActive(true);
+            helpOpen = false;
+        }
     }
 }
