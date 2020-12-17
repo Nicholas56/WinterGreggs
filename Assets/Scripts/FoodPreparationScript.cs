@@ -73,6 +73,7 @@ public class FoodPreparationScript : MonoBehaviour
                                 //Then sets the next inactive button to display the cooked dish.
                                 prepIngredients[ingreds.Count + 1].SetActive(true);
                                 ChangeButtonText(prepIngredients[ingreds.Count+1], recipes[i].dishName);
+                                ChangeButtonImage(prepIngredients[ingreds.Count + 1], recipes[i].dishSprite);
                                 sound.PlaySoundEffect(1);
                                 return;
                             }
@@ -131,7 +132,7 @@ public class FoodPreparationScript : MonoBehaviour
             if (!ovens[i].activeSelf)
             {
                 ovens[i].SetActive(true);
-                ChangeButtonText(ovens[i], "Cooking: " + dish.GetComponentInChildren<TMP_Text>().text);
+                ChangeButtonText(ovens[i], "Cooking: \n" + dish.GetComponentInChildren<TMP_Text>().text);
 
                 return;
             }

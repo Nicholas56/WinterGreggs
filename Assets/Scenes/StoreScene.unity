@@ -774,8 +774,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3549,10 +3549,10 @@ RectTransform:
   m_Father: {fileID: 1885050829}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 600}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &601904117
 MonoBehaviour:
@@ -5266,8 +5266,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6800,8 +6800,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7108,8 +7108,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12069,8 +12069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - {fileID: 11400000, guid: f0e1a1a372c75ca44a9c090e25b229f9, type: 2}
-  - {fileID: 11400000, guid: e719cef42f2902b4893007ace5b50aed, type: 2}
+  - {fileID: 11400000, guid: e0ba853c3fe186449a55f8e5a5af25ee, type: 2}
+  - {fileID: 11400000, guid: 5efa7e7f05a39e84a88218375babebe4, type: 2}
 --- !u!4 &2106079780
 Transform:
   m_ObjectHideFlags: 0
@@ -12112,14 +12112,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientsHolder: {fileID: 573110953}
   ingredients:
-  - ingredientName: Ingredient 1
-    ingredientImage: {fileID: 0}
-  - ingredientName: Ingredient 2
-    ingredientImage: {fileID: 0}
-  - ingredientName: Ingredient 3
-    ingredientImage: {fileID: 0}
-  - ingredientName: Ingredient 4
-    ingredientImage: {fileID: 0}
+  - ingredientName: Bread
+    ingredientImage: {fileID: 21300000, guid: 3d5e18e3d9e80f548afdb453e7f25a8b, type: 3}
+  - ingredientName: Cheese
+    ingredientImage: {fileID: 21300000, guid: 68949fa1e548650459f9482d1f73481e, type: 3}
+  - ingredientName: Chicken
+    ingredientImage: {fileID: 21300000, guid: f2e78b6773931394ea9007759e44c4d9, type: 3}
+  - ingredientName: Bacon
+    ingredientImage: {fileID: 21300000, guid: 127fa575e32cfa1498e725e9f71920e2, type: 3}
 --- !u!1 &2111166188
 GameObject:
   m_ObjectHideFlags: 0

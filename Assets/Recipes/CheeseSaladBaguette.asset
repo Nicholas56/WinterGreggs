@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce851151af140843acc91f74e72b8ae, type: 3}
   m_Name: CheeseSaladBaguette
   m_EditorClassIdentifier: 
-  dishName: Mature Cheddar Cheese Salad Baguette
+  dishName: Mature Cheddar Cheese Salad
   prepMethod: 2
   ingredients:
   - Bread
   - Cheese
   - Salad
+  dishSprite: {fileID: 21300000, guid: 7cc6f994c2cd3bd4aabe09a3a2fa5ccd, type: 3}
   dishCost: 4

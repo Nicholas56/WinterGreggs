@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce851151af140843acc91f74e72b8ae, type: 3}
   m_Name: ChickenCheeseBaguette
   m_EditorClassIdentifier: 
-  dishName: 
-  prepMethod: 0
-  ingredients: []
-  dishCost: 0
+  dishName: Chicken and Cheese
+  prepMethod: 3
+  ingredients:
+  - Bread
+  - Chicken
+  - Cheese
+  dishSprite: {fileID: 21300000, guid: dddebf5e77e6fd74bb4216319f0d2f95, type: 3}
+  dishCost: 4

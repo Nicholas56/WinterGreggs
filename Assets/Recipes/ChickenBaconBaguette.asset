@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce851151af140843acc91f74e72b8ae, type: 3}
   m_Name: ChickenBaconBaguette
   m_EditorClassIdentifier: 
-  dishName: Roast Chicken and Bacon Club Baguette
+  dishName: Chicken Bacon
   prepMethod: 1
   ingredients:
   - Bread
   - Chicken
   - Bacon
+  dishSprite: {fileID: 21300000, guid: 9c777eeaa2953aa4b8a8c8ab1119796e, type: 3}
   dishCost: 4

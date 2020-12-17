@@ -51,7 +51,7 @@ public class ScoreScript : MonoBehaviour
         List<Recipe> recipeToCheck = FindObjectOfType<FoodPreparationScript>().recipes;
         for (int i = 0; i < recipeToCheck.Count; i++)
         {
-            if (recipeToCheck[i].dishName == dishName)
+            if (recipeToCheck[i].dishName == dishName.Trim('\n'))
             {
                 return recipeToCheck[i].dishCost;
             }
