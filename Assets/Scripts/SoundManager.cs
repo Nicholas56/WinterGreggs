@@ -11,9 +11,12 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         sfx = new List<AudioSource>();
-        for (int i = 0; i < transform.childCount; i++)
+        if (transform.childCount != 0)
         {
-            sfx.Add(transform.GetChild(i).GetComponent<AudioSource>());
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                sfx.Add(transform.GetChild(i).GetComponent<AudioSource>());
+            }
         }
         music = GetComponent<AudioSource>();
 
