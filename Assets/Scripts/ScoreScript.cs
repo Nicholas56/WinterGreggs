@@ -2,24 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreScript : MonoBehaviour
 {
     TMP_Text scoreTxt;
     int scoreNum;
 
+    int storeNum;
+    int currentHighScore;
+
+
     private void Awake()
     {
         scoreTxt = GetComponent<TMP_Text>();
         scoreTxt.text = "Score: " + scoreNum;
+
+        storeNum = SceneManager.GetActiveScene().buildIndex; //Get current store number using scene BuildIndex
+        Debug.Log(PlayerPrefs.GetInt("StoreHighScore" + storeNum, scoreNum)); 
     }
 
     public void IncreaseScore(string buttonText)
     {
+        int currentHighScore = PlayerPrefs.GetInt("StoreHighScore" + storeNum, scoreNum);
         int scoreAdd = FindCost(buttonText);
 
         scoreNum +=scoreAdd;
-        scoreTxt.text = "Score: £" + scoreNum;     
+        scoreTxt.text = "Score: £" + scoreNum;
+        print("Score: " + scoreNum);
+
+        if(scoreNum > currentHighScore) //Check if current score is higher than the HighScore, 
+        {
+            PlayerPrefs.SetInt("StoreHighScore" + storeNum, scoreNum);
+            print("NewHighScore");
+        }
+
     }
 
     int FindCost(string textToRead)

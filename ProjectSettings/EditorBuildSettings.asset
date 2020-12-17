@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StoreScene.unity
     guid: 8acdb5c849b5e7347a6cf60ae1a8a581
   - enabled: 1
-    path: Assets/Scenes/MapScene.unity
-    guid: 7da565f2214e7664b9b8b3421b2be991
+    path: Assets/Scenes/StoreScene 1.unity
+    guid: 037905a55d0c223439f754193a8afb6c
+  - enabled: 1
+    path: Assets/Scenes/StoreScene 2.unity
+    guid: 965a1395d8baf4b40a5b43609559c574
+  - enabled: 1
+    path: Assets/Scenes/StoreScene 3.unity
+    guid: 642b7c11575517d4ea72a2febb03208e
+  - enabled: 1
+    path: Assets/Scenes/MapScene v1.1.unity
+    guid: 7011c958360602842a0edca883db8ea4
   m_configObjects: {}
