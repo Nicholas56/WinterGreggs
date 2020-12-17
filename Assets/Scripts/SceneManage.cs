@@ -14,14 +14,10 @@ public class SceneManage : MonoBehaviour
     /// <param name="sceneNumber"></param>
     public void GoToScene(int sceneNumber)
     {
-        SceneManager.LoadSceneAsync(sceneNumber);
+        SceneManager.LoadScene(sceneNumber);
 
         //Load gameManager into new scene
 
-        if (sceneNumber != currentScene)
-        {
-            SceneManager.UnloadSceneAsync(currentScene);
-        }
     }
 
     /// <summary>
