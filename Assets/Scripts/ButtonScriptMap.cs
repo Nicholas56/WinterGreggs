@@ -45,6 +45,11 @@ public class ButtonScriptMap : MonoBehaviour
         SceneManager.LoadScene("StoreScene 3"); 
     }
 
+    public void goToMap()
+    {
+        SceneManager.LoadScene("MapScene v1.1");
+    }
+
     public void OpenHelp()
     {
         if (helpOpen == false)

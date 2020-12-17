@@ -14,7 +14,9 @@ public class HighScoreScript : MonoBehaviour
 
     int scoreLeft;
 
-    int scoreRequired = 100;
+    int scoreRequired = 80;
+
+    public GameObject unlockButton;
 
     public TextMeshProUGUI highScore1;
     public TextMeshProUGUI highScore2;
@@ -50,7 +52,17 @@ public class HighScoreScript : MonoBehaviour
 
         mainScoreText.text = ("Score: " + mainScore);
 
-        scoreLeftText.text = ("Score " + scoreLeft + " more points to Unlock a Coupon!");
+
+        if(mainScore < scoreRequired)
+        {
+            scoreLeftText.text = ("Score " + scoreLeft + " more points to Unlock a Coupon!");
+        }
+        else
+        {
+            scoreLeftText.text = ("You have earned over " + scoreRequired + " points. Unlock the discount code!");
+            unlockButton.SetActive(true);
+        }
+        
     }
 
 
