@@ -11,12 +11,14 @@ public class FoodPreparationScript : MonoBehaviour
     List<GameObject> prepIngredients;
     List<GameObject> ovens;
     SoundManager sound;
+    List<Ingredient> ingredientInfo;
 
     private void Awake()
     {
         Transform prepTable = GameObject.Find("PrepIngredients").transform;
         Transform ovenHolder = GameObject.Find("OvenPanel").transform;
         sound = FindObjectOfType<SoundManager>();
+        ingredientInfo = FindObjectOfType<SetIngredients>().ingredients;
 
         prepIngredients = new List<GameObject>();
         ovens = new List<GameObject>();
@@ -67,7 +69,9 @@ public class FoodPreparationScript : MonoBehaviour
                                 {
                                     //This checks that the number of buttons match the remaining current ingredients, setting the rest to inactive
                                     if (ingreds.Count > j)
-                                    { ChangeButtonText(prepIngredients[j], ingreds[j]); }
+                                    { 
+                                        ResetTableIngredient(prepIngredients[j], ingreds[j]); 
+                                    }
                                     else { prepIngredients[j].SetActive(false); }
                                 }
                                 //Then sets the next inactive button to display the cooked dish.
@@ -177,6 +181,18 @@ public class FoodPreparationScript : MonoBehaviour
     void ChangeButtonImage(GameObject button, Sprite newImage)
     {
         button.GetComponentInChildren<UnityEngine.UI.Image>().sprite = newImage;
+    }
+
+    void ResetTableIngredient(GameObject button, string ingredName)
+    {
+        button.GetComponentInChildren<TMP_Text>().text = ingredName;
+        for (int i = 0; i < ingredientInfo.Count; i++)
+        {
+            if (ingredName == ingredientInfo[i].ingredientName)
+            {
+                button.GetComponentInChildren<UnityEngine.UI.Image>().sprite = ingredientInfo[i].ingredientImage;
+            }
+        }
     }
 
     /// <summary>
